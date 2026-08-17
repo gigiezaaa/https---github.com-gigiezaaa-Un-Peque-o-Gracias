@@ -1,3 +1,11 @@
+const clickSound = new Audio("assets/click.mp3");
+
+function playClickSound() {
+    clickSound.currentTime = 0;
+    clickSound.play().catch(() => {});
+}
+
+
 // =====================================================
 // A LITTLE SOMETHING FOR MAX
 // =====================================================
@@ -293,9 +301,9 @@ But since you said they're evil, so let's just move on to the next question.`,
 
             `Awww, nice choice.
 
-I know you miss your cat.
+The person who made this website told me that you miss your cat.
 
-But you'll have another one someday yaaa.`,
+But it's okay, you'll have another one someday yaaa.`,
 
             "assets/cat.jpg"
 
@@ -548,6 +556,10 @@ function showLetter() {
 
     choices.appendChild(letter);
 
+    // Play letter opening sound
+const letterSound = new Audio("assets/letter-open.mp3");
+letterSound.volume = 0.6;
+letterSound.play();
 
     // Wait for letter animation
 
@@ -799,9 +811,7 @@ What's your current mood?`,
         title: "Okay, last one.",
 
         text:
-        `What would you do if you were all alone?
-
-Pick one.`,
+        `What would you do if you were all alone?`,
 
         choices: [
 
@@ -931,3 +941,11 @@ You're free now.`,
 // =====================================================
 
 showStage(stages[currentStage]);
+
+
+
+document.addEventListener("click", function (event) {
+    if (event.target.closest("button")) {
+        playClickSound();
+    }
+});
