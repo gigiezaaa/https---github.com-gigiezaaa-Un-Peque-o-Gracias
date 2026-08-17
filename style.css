@@ -1,0 +1,540 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600&family=Nunito:wght@400;500;600;700&display=swap');
+
+
+/* =========================
+   BASIC
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+
+    font-family: "Pixelify Sans", sans-serif;
+
+    color: #4f554d;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at 10% 15%, #e8f0dc 0, transparent 22%),
+        radial-gradient(circle at 90% 80%, #f7e1d8 0, transparent 25%),
+        #f8f5ed;
+
+    padding: 25px;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+    width: 100%;
+    max-width: 620px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.card {
+    background: #fffefa;
+
+    border: 2px solid #626a5e;
+
+    border-radius: 28px;
+
+    padding: 45px 42px;
+
+    box-shadow:
+        7px 8px 0 #d8dfc9;
+
+    position: relative;
+
+    animation: cardIn 0.5s ease;
+}
+
+
+/* little corner decoration */
+
+.card::before {
+    content: "♡";
+
+    position: absolute;
+
+    top: 18px;
+    right: 25px;
+
+    font-size: 22px;
+
+    color: #e89b9b;
+
+    transform: rotate(10deg);
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.tiny-star {
+    font-size: 18px;
+
+    color: #e9a7a7;
+
+    margin-bottom: 8px;
+
+    animation: float 2.5s ease-in-out infinite;
+}
+
+h1 {
+    font-family: "Pixelify Sans", sans-serif;
+
+    font-size: clamp(38px, 8vw, 55px);
+
+    font-weight: 500;
+
+    letter-spacing: -1px;
+
+    color: #4d5549;
+
+    margin-bottom: 28px;
+}
+
+
+/* =========================
+   DIALOGUE
+========================= */
+
+.dialogue {
+    min-height: 145px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px 10px;
+}
+
+.dialogue p {
+    max-width: 500px;
+
+    font-family: "Nunito", sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    font-weight: 500;
+
+    color: #60675d;
+
+    white-space: pre-line;
+}
+
+
+/* =========================
+   CHOICES
+========================= */
+
+.choices {
+    width: 100%;
+    max-width: 430px;
+
+    margin: 15px auto 20px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 11px;
+}
+
+.choice-button {
+    width: 100%;
+
+    background: #f2f5e9;
+
+    border: 2px solid #aeb8a5;
+
+    color: #586053;
+
+    padding: 13px 18px;
+
+    border-radius: 16px;
+
+    font-family: "Pixelify Sans", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.choice-button:hover {
+    background: #e8eedb;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 4px 0 #cbd3bf;
+}
+
+.choice-button:active {
+    transform: translateY(0);
+
+    box-shadow: none;
+}
+
+
+/* =========================
+   MAIN BUTTON
+========================= */
+
+.main-button {
+    background: #687362;
+
+    border: 2px solid #515a4d;
+
+    color: white;
+
+    padding: 13px 28px;
+
+    border-radius: 16px;
+
+    font-family: "Pixelify Sans", sans-serif;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+
+    box-shadow: 0 4px 0 #41483e;
+}
+
+.main-button:hover {
+    transform: translateY(-3px);
+
+    background: #74806e;
+
+    box-shadow: 0 6px 0 #41483e;
+}
+
+.main-button:active {
+    transform: translateY(2px);
+
+    box-shadow: 0 2px 0 #41483e;
+}
+
+.main-button:disabled {
+    opacity: 0.45;
+
+    cursor: default;
+
+    transform: none;
+
+    box-shadow: 0 2px 0 #41483e;
+}
+
+
+/* =========================
+   PHOTOS
+========================= */
+
+.memory-image {
+    width: 100%;
+
+    max-width: 390px;
+
+    max-height: 300px;
+
+    object-fit: cover;
+
+    display: block;
+
+    margin: 20px auto;
+
+    border-radius: 20px;
+
+    border: 3px solid #d7dfca;
+
+    box-shadow: 5px 6px 0 #e7c9c1;
+
+    animation: photoIn 0.6s ease;
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+    margin-top: 25px;
+
+    padding: 32px;
+
+    background: #fffdf6;
+
+    border: 2px solid #73776d;
+
+    border-radius: 18px;
+
+    text-align: left;
+
+    box-shadow: 5px 6px 0 #ded8c7;
+
+    opacity: 0;
+
+    transform: translateY(20px);
+
+    animation: letterIn 0.8s ease forwards;
+}
+
+.letter h2 {
+    font-family: "Pixelify Sans", sans-serif;
+
+    font-size: 30px;
+
+    font-weight: 500;
+
+    text-align: center;
+
+    margin-bottom: 25px;
+
+    color: #555b50;
+}
+
+.letter p {
+    font-family: "Nunito", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.9;
+
+    color: #5e625a;
+
+    margin-bottom: 15px;
+}
+
+.signature {
+    margin-top: 25px;
+
+    text-align: right;
+
+    font-family: "Fredoka", sans-serif;
+
+    font-size: 21px;
+
+    color: #697261;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer-text {
+    text-align: center;
+
+    margin-top: 22px;
+
+    font-size: 12px;
+
+    color: #9b9e94;
+
+    font-weight: 600;
+}
+
+
+/* =========================
+   BACKGROUND DECORATIONS
+========================= */
+
+.decoration {
+    position: fixed;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+.decoration-one {
+    width: 100px;
+    height: 100px;
+
+    background: #e6edd8;
+
+    top: 8%;
+    left: 8%;
+
+    opacity: 0.7;
+}
+
+.decoration-two {
+    width: 70px;
+    height: 70px;
+
+    background: #f3d9d2;
+
+    bottom: 12%;
+    right: 9%;
+
+    opacity: 0.7;
+}
+
+.decoration-three {
+    width: 25px;
+    height: 25px;
+
+    border: 5px solid #d7dfca;
+
+    top: 22%;
+    right: 15%;
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes cardIn {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes photoIn {
+
+    from {
+        opacity: 0;
+
+        transform: scale(0.92) rotate(-1deg);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: scale(1) rotate(0);
+    }
+
+}
+
+@keyframes letterIn {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes float {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 16px;
+    }
+
+    .card {
+        padding: 35px 20px;
+
+        border-radius: 24px;
+
+        box-shadow: 5px 6px 0 #d8dfc9;
+    }
+
+    h1 {
+        font-size: 38px;
+
+        margin-bottom: 20px;
+    }
+
+    .dialogue {
+        min-height: 150px;
+
+        padding: 0;
+    }
+
+    .dialogue p {
+        font-size: 15px;
+
+        line-height: 1.75;
+    }
+
+    .choice-button {
+        font-size: 14px;
+
+        padding: 12px 15px;
+    }
+
+    .memory-image {
+        max-height: 250px;
+    }
+
+    .letter {
+        padding: 24px 20px;
+    }
+
+    .letter p {
+        font-size: 14px;
+
+        line-height: 1.8;
+    }
+
+    .footer-text {
+        font-size: 11px;
+    }
+
+}
