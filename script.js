@@ -301,7 +301,7 @@ But since you said they're evil, so let's just move on to the next question.`,
 
             `Awww, nice choice.
 
-The person who made this website told me that you miss your cat.
+The person who made this told me that you miss your cat.
 
 But it's okay, you'll have another one someday yaaa.`,
 
@@ -324,7 +324,7 @@ But it's okay, you'll have another one someday yaaa.`,
 
             `I kinda knew you'd pick this one.
 
-The person who made this website can read your mind, so...`,
+The person who made this can read your mind, so...`,
 
             "assets/overthinking.jpg"
 
@@ -366,7 +366,7 @@ The person who made this website can read your mind, so...`,
 
 But you know what's even more fun?
 
-Playing with the person who made this website.`,
+Playing with the person who made this for you.`,
 
             "assets/dogs-playing.jpg"
 
